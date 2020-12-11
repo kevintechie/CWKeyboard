@@ -1,6 +1,6 @@
 #include "HID-Project.h"
 #include <Adafruit_NeoPixel.h>
-// #define BOUNCE_WITH_PROMPT_DETECTION
+#define BOUNCE_WITH_PROMPT_DETECTION
 #include <Bounce2.h>
 
 Bounce dit = Bounce();
@@ -12,8 +12,8 @@ const int dahPin = 1;
 const int dahLed = 8;
 const int modePin1 = 2;
 const int modePin2 = 3;
-const int ledPin = 11;
-const int ledCount = 1;
+const unsigned int ledPin = 11;
+const unsigned int ledCount = 1;
 
 const int paddles = 0;
 const int straightKey = 1;
@@ -23,13 +23,13 @@ int mode = paddles;
 int debounceInterval = 5;
 
 void setup() {
-  Adafruit_NeoPixel pixel(1, 11, NEO_GRBW + NEO_KHZ800);
+  Adafruit_NeoPixel pixel(ledCount, ledPin, NEO_GRBW + NEO_KHZ800);
 
   pinMode(modePin1, INPUT_PULLUP);
   pinMode(modePin2, INPUT_PULLUP);
   pinMode(ditLed, OUTPUT);
   pinMode(dahLed, OUTPUT);
-  
+
   pixel.begin();
   pixel.setPixelColor(0, pixel.Color(0, 50, 0));
 
