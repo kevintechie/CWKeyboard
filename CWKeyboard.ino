@@ -7,9 +7,9 @@ Bounce dit = Bounce();
 Bounce dah = Bounce();
 
 const int ditPin = 0;
-const int ditLed = 6;
+const int ditLed = 2;
 const int dahPin = 1;
-const int dahLed = 7;
+const int dahLed = 3;
 const int modePin1 = 4;
 const int modePin2 = 9;
 const unsigned int ledPin = 11;
